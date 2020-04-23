@@ -305,17 +305,17 @@ def signup_user():
     #new lines of code added to check the validity of the password
 
     if len(password_info) < 8:
-        messagebox.showinfo("Invalid", "Password is too short")
+        messagebox.showinfo("Invalid", "Password does not meet criteria")
     elif not re.search("[a-z]", password_info):
-        messagebox.showinfo("Invalid", "Password has no lower case letters")
+        messagebox.showinfo("Invalid", "Password does not meet criteria")
     elif not re.search("[A-Z]", password_info):
-        messagebox.showinfo("Invalid", "Password has no upper case letters")
+        messagebox.showinfo("Invalid", "Password does not meet criteria")
     elif not re.search("[0-9]", password_info):
-        messagebox.showinfo("Invalid", "Password has no numbers")
+        messagebox.showinfo("Invalid", "Password does not meet criteria")
     elif not re.search("[!#$%&'()*+,-./:;<=>?@[\]^_`{|}~]", password_info):
-        messagebox.showinfo("Invalid", "Password has no special characters")
+        messagebox.showinfo("Invalid", "Password does not meet criteria")
     elif username_info.lower() in password_info.lower():
-        messagebox.showinfo("Invalid", "Password should not contain the username")
+        messagebox.showinfo("Invalid", "Password does not meet criteria. Password should not contain the username")
 
     # Note: Python reads line by line so putting this at the end works
     else:
